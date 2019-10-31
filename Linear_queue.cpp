@@ -1,25 +1,25 @@
 /************************************
 *
-*   This is Queue Data Structure
+*   This is Linear Queue Data Structure
 *
 *   Gehwan Gehwan
 *
-*   ÇĞ±³¿¡¼­ ¹è¿î ³»¿ë ±â¾ï Àß ¾È³ª¼­ ´Ù½Ã ½ÃÀÛÇÏ´Â ½½ÇÄ
+*   í•™êµì—ì„œ ë°°ìš´ ë‚´ìš© ê¸°ì–µ ì˜ ì•ˆë‚˜ì„œ ë‹¤ì‹œ ì‹œì‘í•˜ëŠ” ìŠ¬í””
 *
-*   °í°í½Ì 2019 - 10 - 31
+*   ê³ ê³ ì‹± 2019 - 10 - 31
 *
-*   °³¹ßÈ¯°æÀº C ÀÔ´Ï´Ù
+*   ê°œë°œí™˜ê²½ì€ C ì…ë‹ˆë‹¤
 *************************************/
 #define _CRT_SECURE_NO_WARNINGS
 #define SIZE 100
 #include <stdio.h>
 
-//size°¡ 100ÀÎ Å¥¸¦ ÃÊ±âÈ­ÇÏ°í ½ÃÀÛ
+//sizeê°€ 100ì¸ íë¥¼ ì´ˆê¸°í™”í•˜ê³  ì‹œì‘
 int queue[SIZE] = { 0 };
 int front = -1;
 int rear = -1;
 
-//Å¥°¡ ²Ë Ã¡À» ¶§, ¿À·ù ¹İÈ¯
+//íê°€ ê½‰ ì°¼ì„ ë•Œ, ì˜¤ë¥˜ ë°˜í™˜
 void enqueue(int data)
 {
 	if (front + 1 == SIZE - 1)
@@ -27,7 +27,7 @@ void enqueue(int data)
 	else
 		queue[++front] = data;
 }
-//Å¥°¡ ºñ¾úÀ» ¶§, ¿À·ù ¹İÈ¯
+//íê°€ ë¹„ì—ˆì„ ë•Œ, ì˜¤ë¥˜ ë°˜í™˜
 int dequeue(void)
 {
 	if (rear == front)
