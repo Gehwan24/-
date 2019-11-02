@@ -1,6 +1,6 @@
 /************************************
 *
-*   This is Double Linked List Data Structure
+*   This is Doubly Linked List Data Structure
 *
 *   Gehwan Gehwan
 *
@@ -180,7 +180,7 @@ void Print_data(void)
 }
 int main(void)
 {
-	printf("---------------------------------Doublely Linked List-----------------------------------\n");
+	printf("---------------------------------Doublly Linked List-----------------------------------\n");
 	int input, data;
 	while (1) {
 		printf("1.Insert      2. Search       3. Delete       4. Print       5.Exit\n");
