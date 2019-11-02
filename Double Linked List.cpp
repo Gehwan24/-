@@ -4,16 +4,16 @@
 *
 *   Gehwan Gehwan
 *
-*   ÇĞ±³¿¡¼­ ¹è¿î ³»¿ë ±â¾ï Àß ¾È³ª¼­ ´Ù½Ã ½ÃÀÛÇÏ´Â ½½ÇÄ
+*   í•™êµì—ì„œ ë°°ìš´ ë‚´ìš© ê¸°ì–µ ì˜ ì•ˆë‚˜ì„œ ë‹¤ì‹œ ì‹œì‘í•˜ëŠ” ìŠ¬í””
 *
-*   °í°í½Ì 2019 - 11-01
+*   ê³ ê³ ì‹± 2019 - 11-01
 *
-*   °³¹ßÈ¯°æÀº C ÀÔ´Ï´Ù
+*   ê°œë°œí™˜ê²½ì€ C ì…ë‹ˆë‹¤
 *************************************/
 #include <stdio.h>
 #include <stdlib.h>
 
-//Á¤¼öÇü ÀÚ·áÇü ¹× ´ÙÀ½ ³ëµå¸¦ ÇâÇÑ Æ÷ÀÎÅÍ¸¦ °¡Áö°í ÀÖ´Â ±¸Á¶Ã¼ Node
+//ì •ìˆ˜í˜• ìë£Œí˜• ë° ë‹¤ìŒ ë…¸ë“œë¥¼ í–¥í•œ í¬ì¸í„°ë¥¼ ê°€ì§€ê³  ìˆëŠ” êµ¬ì¡°ì²´ Node
 
 int list_count = 0;
 typedef struct Node {
@@ -26,7 +26,7 @@ Node* start_head;
 
 Node* Create_Node(int data) {
 	Node* new_node = (Node*)malloc(sizeof(Node));
-	new_node->data = data; //µ¥ÀÌÅÍ ÀÔ·Â
+	new_node->data = data; //ë°ì´í„° ì…ë ¥
 	new_node->before = NULL;
 	new_node->next = NULL;
 	return new_node;
@@ -180,7 +180,7 @@ void Print_data(void)
 }
 int main(void)
 {
-	printf("---------------------------------Linked List-----------------------------------\n");
+	printf("---------------------------------Doublely Linked List-----------------------------------\n");
 	int input, data;
 	while (1) {
 		printf("1.Insert      2. Search       3. Delete       4. Print       5.Exit\n");
