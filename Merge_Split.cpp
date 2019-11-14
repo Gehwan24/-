@@ -5,13 +5,13 @@
 *
 *   Gehwan Gehwan
 *
-*   ÇĞ±³¿¡¼­ ¹è¿î ³»¿ë ±â¾ï Àß ¾È³ª¼­ ´Ù½Ã ½ÃÀÛÇÏ´Â ½½ÇÄ
+*   í•™êµì—ì„œ ë°°ìš´ ë‚´ìš© ê¸°ì–µ ì˜ ì•ˆë‚˜ì„œ ë‹¤ì‹œ ì‹œì‘í•˜ëŠ” ìŠ¬í””
 *
-*   Sort (ÀüºÎ ´Ù) ¸ÓÁö¶û ÄüÀº ÀÎÅÍ³İ º¸°í ÇÔ
+*   Sort (ì „ë¶€ ë‹¤) ë¨¸ì§€ë‘ í€µì€ ì¸í„°ë„· ë³´ê³  í•¨
 *
-*   °í°í½Ì 2019 - 10 - 31
+*   ê³ ê³ ì‹± 2019 - 10 - 31
 *
-*   °³¹ßÈ¯°æÀº C ÀÔ´Ï´Ù
+*   ê°œë°œí™˜ê²½ì€ C ì…ë‹ˆë‹¤
 *************************************/
 
 #include <stdio.h>
@@ -19,16 +19,16 @@
 #define SIZE 100
 /*
 MERGE SORT
-ÀÎµ¦½º¸¦ °è¼Ó ÂÉ°³¼­ ºñ±³ ÇÑ ÀÌÈÄ¿¡ ÇÏ³ªÀÇ ³ğÀ¸·Î ¸¸µå´Â°Å
+ì¸ë±ìŠ¤ë¥¼ ê³„ì† ìª¼ê°œì„œ ë¹„êµ í•œ ì´í›„ì— í•˜ë‚˜ì˜ ë†ˆìœ¼ë¡œ ë§Œë“œëŠ”ê±°
 */
 void merge(int arr[], int start,int middle, int end)
 {
-	//ÇÕÄ¡´Â ÇÔ¼ö
+	//í•©ì¹˜ëŠ” í•¨ìˆ˜
 	int temp[SIZE];
 	int i = start;
 	int j = middle+1;
 	int k = 0;
-	while (i <= middle && j <= end) //µÑÁß¿¡ ÇÑ³ğ ³¡³¯¶§±îÁö ºñ±³ ÇØ¼­ Å«³ğºÎÅÍ ³Ö¾îÁÖ±â
+	while (i <= middle && j <= end) //ë‘˜ì¤‘ì— í•œë†ˆ ëë‚ ë•Œê¹Œì§€ ë¹„êµ í•´ì„œ í°ë†ˆë¶€í„° ë„£ì–´ì£¼ê¸°
 	{
 		if (arr[i] >= arr[j])
 			temp[k++] = arr[i++];
@@ -43,31 +43,31 @@ void merge(int arr[], int start,int middle, int end)
 void MergeSort(int arr[], int start, int end)
 {
 	int middle;
-	//¹İÀ¸·Î ÂÉ°³´Â ¿ªÇÒÀ» ¼öÇàÇØ¾ß´ï
+	//ë°˜ìœ¼ë¡œ ìª¼ê°œëŠ” ì—­í• ì„ ìˆ˜í–‰í•´ì•¼ëŒ
 	if (start < end)
 	{
 		middle = (start + end) / 2;
-		MergeSort(arr, start, middle); //½ÃÀÛ - Áß°£ ºÎºĞ
-		MergeSort(arr, middle+1,end); // Áß°£ - ³¡ ºÎºĞ
-		merge(arr, start, middle, end); // ´Ù½Ã ÇÕÄ¡±â;
+		MergeSort(arr, start, middle); //ì‹œì‘ - ì¤‘ê°„ ë¶€ë¶„
+		MergeSort(arr, middle+1,end); // ì¤‘ê°„ - ë ë¶€ë¶„
+		merge(arr, start, middle, end); // ë‹¤ì‹œ í•©ì¹˜ê¸°;
 	}
 }
 int Partition(int arr[], int start, int end)
 {
 	int temp;
-	int pivot = arr[start]; //±âÁØÀº ¸Ç ¿ŞÂÊ ºÎÅÍ (½ÃÀÛ)
+	int pivot = arr[start]; //ê¸°ì¤€ì€ ë§¨ ì™¼ìª½ ë¶€í„° (ì‹œì‘)
 	int low = start + 1;
 	int high = end;
-	//low <= high ÀÏ¶§ ¹«ÇÑ ¹İº¹¾²
+	//low <= high ì¼ë•Œ ë¬´í•œ ë°˜ë³µì“°
 	while (low <= high)
 	{
-		//pivotÀÌ ¾îµğ±îÁö °¡´ÂÁö Ã¼Å©
+		//pivotì´ ì–´ë””ê¹Œì§€ ê°€ëŠ”ì§€ ì²´í¬
 		while (pivot <= arr[low] && low <= end)
 			low++;
-		//pivotÀÌ ¾îµğ±îÁö °¡´ÂÁö Ã¼Å©
+		//pivotì´ ì–´ë””ê¹Œì§€ ê°€ëŠ”ì§€ ì²´í¬
 		while (pivot >= arr[high] && high >= (start + 1))
 			high--;
-		//ºñ±³ÇØ¼­ µÎ°³ °ª ±³È¯
+		//ë¹„êµí•´ì„œ ë‘ê°œ ê°’ êµí™˜
 		if (low <= high)
 		{
 			temp = arr[low];
@@ -75,7 +75,7 @@ int Partition(int arr[], int start, int end)
 			arr[high] = temp;
 		}
 	}
-	//¸¶Áö¸·¿¡ pivot (ºñ±³ ±âÁØ)À» ºñ±³ °á°ú À§Ä¡·Î º¸³»¹ö¸°´Ù.
+	//ë§ˆì§€ë§‰ì— pivot (ë¹„êµ ê¸°ì¤€)ì„ ë¹„êµ ê²°ê³¼ ìœ„ì¹˜ë¡œ ë³´ë‚´ë²„ë¦°ë‹¤.
 	temp = arr[start];
 	arr[start] = arr[high];
 	arr[high] = temp;
@@ -83,11 +83,13 @@ int Partition(int arr[], int start, int end)
 }
 void QuickSort(int arr[], int start, int end)
 {
-	//¿ŞÂÊ ±âÁØÀ¸·Î ³ª´­ ¿¹Á¤
+	//ì™¼ìª½ ê¸°ì¤€ìœ¼ë¡œ ë‚˜ëˆŒ ì˜ˆì •
 	int pivot;
 	if (start < end)
 	{
 		pivot = Partition(arr, start, end);
+		QuickSort(arr, start, pivot-1);
+		QuickSort(arr, pivot+1, end);
 	}
 }
 void PrintArray(int arr[])
